@@ -5,6 +5,7 @@
 , cairomm
 , lib
 , useCairomm ? true
+, enableHOLA ? false
 }:
 
 stdenv.mkDerivation {
@@ -14,7 +15,8 @@ stdenv.mkDerivation {
   src = ./../..;
 
   cmakeFlags = [ ]
-  ++ (if useCairomm then [ "-DUSE_CAIROMM=ON" ] else [ "-DUSE_CAIROMM=OFF" ]);
+  ++ (if useCairomm then [ "-DUSE_CAIROMM=ON" ] else [ "-DUSE_CAIROMM=OFF" ])
+  ++ (if enableHOLA then [ "-DUSE_DIALECT=ON" ] else [ "-DUSE_DIALECT=OFF" ]);
 
   nativeBuildInputs = [ makeWrapper cmake pkg-config ];
   propagatedBuildInputs = [ ] ++ lib.optional (useCairomm) cairomm;
