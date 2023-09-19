@@ -33,6 +33,8 @@
 
 #include "libtopology/util.h"
 
+#include <functional>
+
 namespace vpsc {
     class Variable;
 }

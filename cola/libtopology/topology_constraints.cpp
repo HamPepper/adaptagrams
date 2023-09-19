@@ -26,6 +26,9 @@
 #include "libtopology/topology_graph.h"
 #include "libtopology/topology_constraints.h"
 #include "libtopology/topology_log.h"
+
+#include <functional>
+
 using namespace std;
 namespace topology {
 /* 

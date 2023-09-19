@@ -26,6 +26,12 @@
 #include "libtopology/topology_constraints.h"
 #include "libtopology/cola_topology_addon.h"
 
+#ifndef NOMINMAX
+#define NOMINMAX 
+#endif  // FUCK YOU MICROSOFT!
+
+#define M_PI       3.14159265358979323846   // pi
+
 // Needs to come last since it will include windows.h on WIN32 and
 // may mess up C++ std library include on GCC 4.4
 #include "libcola/cola_log.h"

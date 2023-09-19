@@ -24,6 +24,7 @@
 // cmath needs ::strcpy_s under MinGW so include cstring.
 #include <cstring>
 
+#include <algorithm>
 #include <vector>
 #include <cmath>
 #include <limits>
@@ -44,6 +45,10 @@
 #ifdef MAKEFEASIBLE_DEBUG
   #include "libcola/output_svg.h"
 #endif
+
+#ifndef NOMINMAX 
+#define NOMINMAX 
+#endif // FUCK MICROSOFT!
 
 // Needs to come last since it will include windows.h on WIN32 and
 // may mess up C++ std library include on GCC 4.4
@@ -1625,13 +1630,13 @@ ProjectionResult solve(Variables &vs, Constraints &cs, Rectangles &rs, unsigned 
                 sprintf(buf, "v_%d\n", c->right->id);
                 unsatinfo += buf;
                 if ((unsigned) c->left->id < rs.size()) {
-                    Rectangle *r = rs[c->left->id];
+                    vpsc::Rectangle *r = rs[c->left->id];
                     sprintf(buf, "    v_%d rect: [%f, %f] x [%f, %f]\n", c->left->id,
                             r->getMinX(), r->getMaxX(), r->getMinY(), r->getMaxY());
                     unsatinfo += buf;
                 }
                 if ((unsigned) c->right->id < rs.size()) {
-                    Rectangle *r = rs[c->right->id];
+                    vpsc::Rectangle *r = rs[c->right->id];
                     sprintf(buf, "    v_%d rect: [%f, %f] x [%f, %f]\n", c->right->id,
                             r->getMinX(), r->getMaxX(), r->getMinY(), r->getMaxY());
                     unsatinfo += buf;
@@ -1655,13 +1660,13 @@ ProjectionResult solve(Variables &vs, Constraints &cs, Rectangles &rs, unsigned 
                     sprintf(buf, "v_%d\n", c->right->id);
                     unsatinfo += buf;
                     if ((unsigned) c->left->id < rs.size()) {
-                        Rectangle *r = rs[c->left->id];
+                        vpsc::Rectangle *r = rs[c->left->id];
                         sprintf(buf, "    v_%d rect: [%f, %f] x [%f, %f]\n", c->left->id,
                                 r->getMinX(), r->getMaxX(), r->getMinY(), r->getMaxY());
                         unsatinfo += buf;
                     }
                     if ((unsigned) c->right->id < rs.size()) {
-                        Rectangle *r = rs[c->right->id];
+                        vpsc::Rectangle *r = rs[c->right->id];
                         sprintf(buf, "    v_%d rect: [%f, %f] x [%f, %f]\n", c->right->id,
                                 r->getMinX(), r->getMaxX(), r->getMinY(), r->getMaxY());
                         unsatinfo += buf;

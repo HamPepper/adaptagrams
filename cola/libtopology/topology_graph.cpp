@@ -32,6 +32,8 @@
 #include "libtopology/topology_graph.h"
 #include "libtopology/topology_constraints.h"
 
+#include <functional>
+
 using namespace std;
 
 
