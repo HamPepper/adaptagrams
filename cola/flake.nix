@@ -27,5 +27,13 @@
             cairomm_1_16
             ;
         };
+
+        devShells.default = pkgs.mkShell {
+          name = "adaptagrams-fork-dev";
+          buildInputs = with pkgs; [
+            conan
+            cmake
+          ];
+        };
       });
 }
