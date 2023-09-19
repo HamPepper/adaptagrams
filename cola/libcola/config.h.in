@@ -1,0 +1,4 @@
+#pragma once
+
+/* Enable CairoMM code */
+#cmakedefine HAVE_CAIROMM ${HAVE_CAIROMM}
