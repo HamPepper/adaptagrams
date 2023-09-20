@@ -52,7 +52,7 @@ typedef std::list<ClusterRef *> ClusterRefList;
 //!         experimental you will likely suffer a large performance hit
 //!         when using it.
 //!
-class AVOID_EXPORT ClusterRef
+class  ClusterRef
 {
     public:
         //! @brief  Cluster reference constructor.

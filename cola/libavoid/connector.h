@@ -65,7 +65,7 @@ enum ConnType {
 //!         must visit.  They may optionally be given an arrival/departure
 //!         direction.
 //!
-class AVOID_EXPORT Checkpoint
+class  Checkpoint
 {
     public:
         //! @brief  A point that a route must visit.
@@ -128,7 +128,7 @@ class AVOID_EXPORT Checkpoint
 //! Usually, it is expected that you would create a ConnRef for each connector 
 //! in your diagram and keep that reference in your own connector class.
 //!
-class AVOID_EXPORT ConnRef
+class  ConnRef
 {
     public:
         //! @brief Constructs a connector with no endpoints specified.

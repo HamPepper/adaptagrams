@@ -107,7 +107,7 @@ enum ConnEndType {
 //! multiple connectors), or points attached to shapes (either to the centre of 
 //! the shape or to particular pin positions on the shape).
 //! 
-class AVOID_EXPORT ConnEnd 
+class  ConnEnd 
 {
     public:
         //! @brief Constructs a ConnEnd from a free-floating point.

@@ -49,7 +49,7 @@ class Polygon;
 //! Points consist of an x and y value.  They may also have an ID and vertex
 //! number associated with them.
 //!
-class AVOID_EXPORT Point
+class  Point
 {
     public:
         //! @brief  Default constructor.
@@ -130,7 +130,7 @@ typedef Point Vector;
 //! @brief  A bounding box, represented by the top-left and
 //!         bottom-right corners.
 //!
-class AVOID_EXPORT Box
+class  Box
 {
     public:
         //! The top-left point.
@@ -147,7 +147,7 @@ class AVOID_EXPORT Box
 
 //! @brief  A common interface used by the Polygon classes.
 //!
-class AVOID_EXPORT PolygonInterface
+class  PolygonInterface
 {
     public:
         //! @brief  Constructor.
@@ -185,7 +185,7 @@ class AVOID_EXPORT PolygonInterface
 
 //! @brief  A line between two points. 
 //!
-class AVOID_EXPORT Edge
+class  Edge
 {
     public:
         //! The first point.
@@ -204,7 +204,7 @@ class ReferencingPolygon;
 //! @note The Rectangle class can be used as an easy way of constructing a
 //!       square or rectangular polygon.
 //!
-class AVOID_EXPORT Polygon : public PolygonInterface
+class  Polygon : public PolygonInterface
 {
     public:
         //! @brief  Constructs an empty polygon (with zero points). 
@@ -333,7 +333,7 @@ typedef Polygon PolyLine;
 //! This type of Polygon is used to accurately represent cluster boundaries 
 //! made up from the corner points of shapes.
 //!
-class AVOID_EXPORT ReferencingPolygon : public PolygonInterface
+class  ReferencingPolygon : public PolygonInterface
 {
     public:
         ReferencingPolygon();
@@ -353,7 +353,7 @@ class AVOID_EXPORT ReferencingPolygon : public PolygonInterface
 //! @brief  A Rectangle, a simpler way to define the polygon for square or
 //!         rectangular shapes.
 //!
-class AVOID_EXPORT Rectangle : public Polygon
+class  Rectangle : public Polygon
 {
     public:
         //! @brief  Constructs a rectangular polygon given two opposing 

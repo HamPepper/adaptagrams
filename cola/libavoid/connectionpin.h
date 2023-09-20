@@ -93,7 +93,7 @@ static const double ATTACH_POS_MAX_OFFSET = -1;
 //! ShapeConnectionPin::setExclusive() method.  Exclusive pins may only have 
 //! a single connector attached to them.
 //!
-class AVOID_EXPORT ShapeConnectionPin
+class  ShapeConnectionPin
 {
     public:
         //! @brief Constructs a ShapeConnectionPin at a specified absolute or

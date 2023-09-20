@@ -43,7 +43,7 @@ namespace Avoid {
 // 
 // @note  This is currently intended for internal use.
 //
-class AVOID_EXPORT DebugHandler
+class  DebugHandler
 {
     public:
         DebugHandler()

@@ -383,7 +383,7 @@ class TopologyAddonInterface
 //! Usually you would keep a separate Router instance for each diagram
 //! or layout you have open in your application.
 //
-class AVOID_EXPORT Router {
+class  Router {
     public:
         //! @brief  Constructor for router instance.
         //!

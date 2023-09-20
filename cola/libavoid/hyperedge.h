@@ -126,7 +126,7 @@ struct HyperedgeNewAndDeletedObjectLists
 //! convenience) and you should refer only to the unaffected objects and the 
 //! new connectors and junctions.
 //!
-class AVOID_EXPORT HyperedgeRerouter
+class  HyperedgeRerouter
 {
     public:
         //! @brief  Constructor for hyperedge rerouter object.

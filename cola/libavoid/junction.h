@@ -54,7 +54,7 @@ typedef std::list<JunctionRef *> JunctionRefList;
 //! be used to specify an intermediate point that a single connector must route
 //! through.
 //!
-class AVOID_EXPORT JunctionRef : public Obstacle
+class  JunctionRef : public Obstacle
 {
     public:
         //! @brief  Junction reference constructor.
