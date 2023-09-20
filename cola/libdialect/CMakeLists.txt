@@ -13,3 +13,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${inc}")
 install(TARGETS ${PROJECT_NAME}
         LIBRARY DESTINATION lib
         PUBLIC_HEADER DESTINATION include/lib${PROJECT_NAME})
+target_link_libraries(${PROJECT_NAME} PRIVATE vpsc)
+target_link_libraries(${PROJECT_NAME} PRIVATE avoid)
+target_link_libraries(${PROJECT_NAME} PRIVATE cola)
+target_link_libraries(${PROJECT_NAME} PRIVATE topology)
