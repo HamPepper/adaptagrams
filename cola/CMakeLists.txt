@@ -13,7 +13,7 @@ set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
 
 # compilation flags
 option( USE_COLA "enable libcola, which depends on libvpsc." ON )
-option( USE_TOPOLOGY "enable libtopology, which provides topology-preserving layout algos." ON )
+option( USE_TOPOLOGY "enable libtopology, which provides topology-preserving layout algos." OFF )
 option( USE_DIALECT "enable libdialect, which provides HOLA layout algos." OFF )
 
 option( USE_CAIROMM "enable cairomm support for libcola debug output." OFF )

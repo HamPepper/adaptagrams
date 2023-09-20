@@ -137,17 +137,7 @@ inline void Output2FILE::Output(const std::string& msg)
     fflush(pStream);
 }
 
-#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__)
-#   if defined (BUILDING_FILELOG_DLL)
-#       define FILELOG_DECLSPEC   __declspec (dllexport)
-#   elif defined (USING_FILELOG_DLL)
-#       define FILELOG_DECLSPEC   __declspec (dllimport)
-#   else
-#       define FILELOG_DECLSPEC
-#   endif // BUILDING_DBSIMPLE_DLL
-#else
-#   define FILELOG_DECLSPEC
-#endif // _WIN32
+#define FILELOG_DECLSPEC
 
 class FILELOG_DECLSPEC FILELog : public Log<Output2FILE> {};
 //typedef Log<Output2FILE> FILELog;
