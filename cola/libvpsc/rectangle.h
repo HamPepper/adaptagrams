@@ -19,6 +19,8 @@
  * Author(s):  Tim Dwyer
 */
 
+#include <libvpsc/vpsc_export.h>
+
 /*
  * Functions to automatically generate constraints for the
  * rectangular node overlap removal problem.
@@ -233,7 +235,8 @@ public:
      * in the other axis for example, to avoid numerical precision problems in
      * the axis-by-axis overlap removal process.
      */
-    static double xBorder,yBorder;
+    static VPSC_EXPORT double xBorder;
+    static VPSC_EXPORT double yBorder;
     static void setXBorder(double x) {xBorder=x;}
     static void setYBorder(double y) {yBorder=y;}
     
