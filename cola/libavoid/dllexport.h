@@ -12,18 +12,22 @@
  * See the file LICENSE.LGPL distributed with the library.
  *
  * Licensees holding a valid commercial license may use this file in
- * accordance with the commercial license agreement provided with the 
+ * accordance with the commercial license agreement provided with the
  * library.
  *
  * This library is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  * Author(s):   Michael Wybrow
 */
 
 #ifndef AVOID_DLLEXPORT_H
 #define AVOID_DLLEXPORT_H
+
+#if !defined(_MSC_VER)
+#  define AVOID_STATIC_DEFINE
+#endif
 
 #ifdef AVOID_STATIC_DEFINE
 #  define AVOID_EXPORT
@@ -40,7 +44,7 @@
 #  endif
 
 #  ifndef AVOID_NO_EXPORT
-#    define AVOID_NO_EXPORT 
+#    define AVOID_NO_EXPORT
 #  endif
 #endif
 
