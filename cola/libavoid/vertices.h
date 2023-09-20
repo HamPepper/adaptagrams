@@ -56,14 +56,14 @@ class VertID
         // Properties:
         VertIDProps props;
 
-        static const unsigned short src;
-        static const unsigned short tar;
+        static AVOID_EXPORT const unsigned short src;
+        static AVOID_EXPORT const unsigned short tar;
         
-        static const VertIDProps PROP_ConnPoint;
-        static const VertIDProps PROP_OrthShapeEdge;
-        static const VertIDProps PROP_ConnectionPin;
-        static const VertIDProps PROP_ConnCheckpoint;
-        static const VertIDProps PROP_DummyPinHelper;
+        static AVOID_EXPORT const VertIDProps PROP_ConnPoint;
+        static AVOID_EXPORT const VertIDProps PROP_OrthShapeEdge;
+        static AVOID_EXPORT const VertIDProps PROP_ConnectionPin;
+        static AVOID_EXPORT const VertIDProps PROP_ConnCheckpoint;
+        static AVOID_EXPORT const VertIDProps PROP_DummyPinHelper;
 
         VertID();
         VertID(unsigned int id, unsigned short n, VertIDProps p = 0);

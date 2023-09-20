@@ -13,7 +13,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${inc}")
 # handling static class data members
 include(GenerateExportHeader)
 generate_export_header(${PROJECT_NAME})
-target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/..")
+target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_BINARY_DIR}/..")
 
 
 install(TARGETS ${PROJECT_NAME}

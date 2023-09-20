@@ -22,10 +22,44 @@
  * Author(s):   Michael Wybrow
 */
 
-
 #ifndef AVOID_DLLEXPORT_H
 #define AVOID_DLLEXPORT_H
 
-#define AVOID_EXPORT
+#ifdef AVOID_STATIC_DEFINE
+#  define AVOID_EXPORT
+#  define AVOID_NO_EXPORT
+#else
+#  ifndef AVOID_EXPORT
+#    ifdef avoid_EXPORTS
+        /* We are building this library */
+#      define AVOID_EXPORT __declspec(dllexport)
+#    else
+        /* We are using this library */
+#      define AVOID_EXPORT __declspec(dllimport)
+#    endif
+#  endif
+
+#  ifndef AVOID_NO_EXPORT
+#    define AVOID_NO_EXPORT 
+#  endif
+#endif
+
+#ifndef AVOID_DEPRECATED
+#  define AVOID_DEPRECATED __declspec(deprecated)
+#endif
+
+#ifndef AVOID_DEPRECATED_EXPORT
+#  define AVOID_DEPRECATED_EXPORT AVOID_EXPORT AVOID_DEPRECATED
+#endif
+
+#ifndef AVOID_DEPRECATED_NO_EXPORT
+#  define AVOID_DEPRECATED_NO_EXPORT AVOID_NO_EXPORT AVOID_DEPRECATED
+#endif
+
+#if 0 /* DEFINE_NO_DEPRECATED */
+#  ifndef AVOID_NO_DEPRECATED
+#    define AVOID_NO_DEPRECATED
+#  endif
+#endif
 
 #endif
