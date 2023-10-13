@@ -1,4 +1,8 @@
 .DS_Store
 .vscode
+.vs
 .idea
 
+cola/CMakeUserPresets.json
+cola/build
+cola/out
