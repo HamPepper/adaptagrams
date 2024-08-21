@@ -11,6 +11,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${inc}")
 target_link_libraries(${PROJECT_NAME} PRIVATE vpsc)
 target_link_libraries(${PROJECT_NAME} PRIVATE avoid)
 target_link_libraries(${PROJECT_NAME} PRIVATE cola)
+target_compile_definitions(${PROJECT_NAME} PRIVATE _AFXDLL)
 
 
 install(TARGETS ${PROJECT_NAME}
