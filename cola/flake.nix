@@ -17,9 +17,8 @@
           inherit system;
           overlays = [ self.overlays.default ];
         };
-        lib = pkgs.lib;
       in
-      rec {
+      {
         packages = flake-utils.lib.flattenTree {
           inherit (pkgs)
             adaptagrams-fork
