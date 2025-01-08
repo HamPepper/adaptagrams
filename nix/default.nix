@@ -9,14 +9,16 @@
 }:
 
 stdenv.mkDerivation {
-  pname = "adaptagrams-fork";
-  version = "20230918";
+  pname = "adaptagrams";
+  version = "20240226";
 
-  src = ./../..;
+  src = ./../cola;
 
   cmakeFlags = [ ]
   ++ (if useCairomm then [ "-DUSE_CAIROMM=ON" ] else [ "-DUSE_CAIROMM=OFF" ])
   ++ (if enableHOLA then [ "-DUSE_DIALECT=ON" ] else [ "-DUSE_DIALECT=OFF" ]);
+
+  patches = [ ./preserve_debug_headers.patch ];
 
   nativeBuildInputs = [ makeWrapper cmake pkg-config ];
   propagatedBuildInputs = [ ] ++ lib.optional (useCairomm) cairomm;
