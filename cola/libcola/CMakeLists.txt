@@ -8,11 +8,11 @@ file(GLOB inc CONFIGURE_DEPENDS "*.h")
 file(GLOB src CONFIGURE_DEPENDS "*.cpp")
 
 
-add_library(${PROJECT_NAME} SHARED ${inc} ${src})
-target_include_directories(${PROJECT_NAME} PRIVATE ..)
-target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/..")
+add_library(${PROJECT_NAME} SHARED ${src})
+target_include_directories(${PROJECT_NAME} PUBLIC ..)
+
 set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${inc}")
-target_link_libraries(${PROJECT_NAME} PRIVATE vpsc)
+target_link_libraries(${PROJECT_NAME} PUBLIC vpsc)
 
 if (CAIROMM_FOUND)
     target_include_directories(${PROJECT_NAME} PRIVATE ${CAIROMM_INCLUDE_DIRS})

@@ -6,8 +6,9 @@ file(GLOB inc CONFIGURE_DEPENDS "*.h")
 file(GLOB src CONFIGURE_DEPENDS "*.cpp")
 
 
-add_library(${PROJECT_NAME} SHARED ${inc} ${src})
-target_include_directories(${PROJECT_NAME} PRIVATE ..)
+add_library(${PROJECT_NAME} SHARED ${src})
+target_include_directories(${PROJECT_NAME} PUBLIC ..)
+
 set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${inc}")
 
 # handling static class data members

@@ -8,13 +8,12 @@ project(adaptagrams)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
-#set(CMAKE_FIND_DEBUG_MODE TRUE)
 
 
 # compilation flags
 option(USE_COLA "enable libcola, which depends on libvpsc." ON)
 option(USE_TOPOLOGY "enable libtopology, which provides topology-preserving layout algos." ON)
-option(USE_DIALECT "enable libdialect, which provides HOLA layout algos." OFF)
+option(USE_DIALECT "enable libdialect, which provides HOLA layout algos." ON)
 
 option(USE_CAIROMM "enable cairomm support for libcola debug output." OFF)
 if(USE_CAIROMM)
@@ -28,6 +27,9 @@ if(USE_CAIROMM)
     endif()
 endif()
 
+if(NOT WIN32)
+    set(USE_DIALECT ON)
+endif()
 
 # base lib that every lib depends on
 add_subdirectory(libvpsc)
